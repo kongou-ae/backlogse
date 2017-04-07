@@ -46,17 +46,17 @@ var RootCmd = &cobra.Command{
 		}
 
 		if viper.GetString("url") == "" {
-			fmt.Println("Error: set url in .backlose.")
+			fmt.Println("Error: set url in .backlose.yml.")
 			os.Exit(-1)
 		}
 
 		if viper.GetString("apikey") == "" {
-			fmt.Println("Error: set apikey in .backlose.")
+			fmt.Println("Error: set apikey in .backlose.yml.")
 			os.Exit(-1)
 		}
 
 		if viper.GetString("projectname") == "" {
-			fmt.Println("Error: set projectname in .backlose.")
+			fmt.Println("Error: set projectname in .backlose.yml.")
 			os.Exit(-1)
 		}
 
@@ -106,11 +106,11 @@ func init() {
 	// when this action is called directly.
 	RootCmd.PersistentFlags().StringP("apikey", "", "", "apikye of backlog")
 	RootCmd.PersistentFlags().StringP("projectname", "", "", "projectname of backlog")
-	RootCmd.PersistentFlags().StringP("url", "", "", "url")
+	RootCmd.PersistentFlags().StringP("url", "", "", "url of backlog")
 
 	viper.BindPFlag("apikey", RootCmd.PersistentFlags().Lookup("apikey"))
 	viper.BindPFlag("projectname", RootCmd.PersistentFlags().Lookup("projectname"))
-	viper.BindPFlag("uel", RootCmd.PersistentFlags().Lookup("url"))
+	viper.BindPFlag("url", RootCmd.PersistentFlags().Lookup("url"))
 
 }
 

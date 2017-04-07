@@ -1,6 +1,6 @@
 # backlose
 
-The command which only close issue of backlog.
+The command which only close the issue of backlog.
 
 ```
 >.\backlose.exe 68
